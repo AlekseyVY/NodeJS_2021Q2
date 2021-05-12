@@ -1,6 +1,31 @@
-const getAll = async () => {
-  // TODO: mock implementation. should be replaced during task development
-  return [];
-};
+const userBase = []
 
-module.exports = { getAll };
+
+
+const getAll = async () => userBase;
+
+const createUser = async (user) => {
+  userBase.push(user)
+}
+
+const getById = async (userId) => userBase.filter((ele) => ele.id === userId)
+
+const updateUser = async (userId, user) => {
+   userBase.forEach((ele, idx) => {
+    if(ele.id === userId){
+      userBase[idx] = user
+    }
+    return ele
+  })
+}
+
+const deleteUser = async (userId) => {
+  userBase.forEach((ele, idx) => {
+    if(ele.id === userId){
+      userBase.splice(idx, 1)
+    }
+    return ele
+  })
+}
+
+module.exports = { getAll, createUser, getById, updateUser, deleteUser };
