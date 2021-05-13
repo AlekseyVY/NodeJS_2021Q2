@@ -1,5 +1,6 @@
-const userBase = []
+const { deleteUserTasks } = require('../tasks/task.service');
 
+const userBase = []
 
 
 const getAll = async () => userBase;
@@ -26,6 +27,7 @@ const deleteUser = async (userId) => {
     }
     return ele
   })
+  await deleteUserTasks(userId)
 }
 
 module.exports = { getAll, createUser, getById, updateUser, deleteUser };

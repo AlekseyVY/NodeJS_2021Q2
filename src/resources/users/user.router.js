@@ -26,7 +26,7 @@ router.route('/:userId').put(async (req, res) => {
 
 router.route('/:userId').delete(async (req, res) => {
   await usersService.deleteUser(req.params.userId);
-  res.sendStatus(204);
+  res.status(200).send();
 });
 
 module.exports = router;

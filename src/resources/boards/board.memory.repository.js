@@ -1,3 +1,5 @@
+const { deleteBoardTasks } = require('../tasks/task.service');
+
 const boards = [];
 
 
@@ -22,6 +24,7 @@ const deleteBoard = async (boardId) => {
     if(ele.id === boardId) {
       boards.splice(idx, 1)
       deleted = true
+      deleteBoardTasks(boardId)
     }
   })
   return deleted
