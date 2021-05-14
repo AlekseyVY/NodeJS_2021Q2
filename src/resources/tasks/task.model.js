@@ -10,7 +10,7 @@ class Task {
     boardId = "string",
     columnId = "string"
   } = {}) {
-    this.id = id
+    this.id = id;
     this.title = title;
     this.order = order;
     this.description = description;
@@ -20,4 +20,4 @@ class Task {
   }
 }
 
-module.exports = Task
+module.exports = Task;

@@ -9,24 +9,24 @@ router.route('/').get(async (req, res) => {
 });
 
 router.route('/').post(async (req, res) => {
-  const task = new Task(req.body)
+  const task = new Task(req.body);
   task.boardId = req.params.boardId;
-  await taskService.createTask(task)
+  await taskService.createTask(task);
   res.status(201).json(task);
 });
 
 router.route('/:taskId').get(async (req, res) => {
   const { boardId, taskId } = req.params;
-  const taskById = await taskService.getTaskById(boardId, taskId)
+  const taskById = await taskService.getTaskById(boardId, taskId);
   if(taskById[0]) {
-    res.status(200).json(taskById[0])
+    res.status(200).json(taskById[0]);
   } else {
-    res.sendStatus(404)
+    res.sendStatus(404);
   }
 });
 
 router.route('/:taskId').put(async (req, res) => {
-  const task = new Task(req.body)
+  const task = new Task(req.body);
   const { boardId, taskId } = req.params;
   task.boardId = boardId;
   await taskService.updateTask(task, boardId, taskId);
@@ -35,7 +35,7 @@ router.route('/:taskId').put(async (req, res) => {
 
 router.route('/:taskId').delete(async (req, res) => {
   const { boardId, taskId } = req.params;
-  await taskService.deleteTask(boardId, taskId)
+  await taskService.deleteTask(boardId, taskId);
   res.sendStatus(200);
 });
 
