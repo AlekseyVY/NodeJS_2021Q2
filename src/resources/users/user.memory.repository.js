@@ -1,13 +1,10 @@
 const { deleteUserTasks } = require('../tasks/task.service');
 
-const userBase = []
-
+let userBase = []
 
 const getAll = async () => userBase;
 
-const createUser = async (user) => {
-  userBase.push(user)
-}
+const createUser = async (user) => userBase.push(user)
 
 const getById = async (userId) => userBase.filter((ele) => ele.id === userId)
 
@@ -16,17 +13,11 @@ const updateUser = async (userId, user) => {
     if(ele.id === userId){
       userBase[idx] = user
     }
-    return ele
   })
 }
 
 const deleteUser = async (userId) => {
-  userBase.forEach((ele, idx) => {
-    if(ele.id === userId){
-      userBase.splice(idx, 1)
-    }
-    return ele
-  })
+  userBase = userBase.filter((ele) => ele.id !== userId)
   await deleteUserTasks(userId)
 }
 

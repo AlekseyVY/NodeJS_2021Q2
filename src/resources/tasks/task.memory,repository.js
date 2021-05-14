@@ -1,11 +1,8 @@
 let tasks = [];
 
-
 const getAllTasks = async (boardId) => tasks.filter((task) => task.boardId === boardId)
 
-const createTask = async (task) => {
-  tasks.push(task)
-}
+const createTask = async (task) => tasks.push(task)
 
 const deleteUserTasks = async (userId) => {
   tasks.forEach((task, idx) => {
@@ -16,7 +13,7 @@ const deleteUserTasks = async (userId) => {
 }
 
 const deleteBoardTasks = async (boardId) => {
-  tasks = tasks.filter((ele) => ele.boardId !== boardId)
+  tasks = tasks.filter((task) => task.boardId !== boardId)
 }
 
 const  updateTask = async (task, boardId, taskId) => {

@@ -1,6 +1,5 @@
 const boardRepo = require('./board.memory.repository')
 
-
 const getAllBoards = () =>  boardRepo.getAllBoards()
 const createBoard = (board) => boardRepo.createBoard(board)
 const getBoardById = (boardId) => boardRepo.getBoardById(boardId)

@@ -5,7 +5,7 @@ const Task = require('./task.model');
 
 router.route('/').get(async (req, res) => {
   const tasks = await taskService.getAllTasks(req.params.boardId);
-  res.json(tasks);
+  res.status(200).json(tasks);
 });
 
 router.route('/').post(async (req, res) => {
@@ -18,9 +18,8 @@ router.route('/').post(async (req, res) => {
 router.route('/:taskId').get(async (req, res) => {
   const { boardId, taskId } = req.params;
   const taskById = await taskService.getTaskById(boardId, taskId)
-  if(taskById[0] !== undefined) {
+  if(taskById[0]) {
     res.status(200).json(taskById[0])
-
   } else {
     res.sendStatus(404)
   }

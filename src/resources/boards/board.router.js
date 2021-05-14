@@ -4,7 +4,7 @@ const Board = require('./board.model')
 
 router.route('/').get(async (req, res) => {
   const boards = await boardService.getAllBoards();
-  res.json(boards);
+  res.status(200).json(boards);
 });
 
 router.route('/').post(async (req, res) => {
@@ -15,7 +15,7 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:boardId').get(async (req, res) => {
   const boardById = await boardService.getBoardById(req.params.boardId)
-  if(boardById[0] !== undefined) {
+  if(boardById[0]) {
     res.status(200).json(boardById[0]);
   } else {
     res.sendStatus(404)

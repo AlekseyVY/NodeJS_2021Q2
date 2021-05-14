@@ -1,6 +1,5 @@
 const uuid = require('uuid').v4;
 
-
 class Board {
   constructor({
     id = uuid(),

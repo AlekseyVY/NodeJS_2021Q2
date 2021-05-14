@@ -2,8 +2,6 @@ const { deleteBoardTasks } = require('../tasks/task.service');
 
 let boards = [];
 
-
-
 const getAllBoards = async () => boards
 
 const createBoard = async (board) => boards.push(board)
@@ -20,7 +18,7 @@ const updateBoard = async (boardId, updatedBoard) => {
 
 const deleteBoard = async (boardId) => {
   boards = boards.filter((ele) => ele.id !== boardId)
-  deleteBoardTasks(boardId)
+  await deleteBoardTasks(boardId)
 }
 
 
