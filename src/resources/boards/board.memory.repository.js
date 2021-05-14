@@ -1,6 +1,6 @@
 const { deleteBoardTasks } = require('../tasks/task.service');
 
-const boards = [];
+let boards = [];
 
 
 
@@ -19,14 +19,9 @@ const updateBoard = async (boardId, updatedBoard) => {
 }
 
 const deleteBoard = async (boardId) => {
-  let deleted = false;
-  boards.forEach((ele, idx) => {
-    if(ele.id === boardId) {
-      boards.splice(idx, 1)
-      deleted = true
-      deleteBoardTasks(boardId)
-    }
-  })
-  return deleted
+  boards = boards.filter((ele) => ele.id !== boardId)
+  deleteBoardTasks(boardId)
 }
+
+
 module.exports = { getAllBoards, createBoard, getBoardById, updateBoard, deleteBoard }

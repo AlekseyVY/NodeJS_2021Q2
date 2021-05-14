@@ -1,4 +1,4 @@
-const tasks = [];
+let tasks = [];
 
 
 const getAllTasks = async (boardId) => tasks.filter((task) => task.boardId === boardId)
@@ -16,11 +16,7 @@ const deleteUserTasks = async (userId) => {
 }
 
 const deleteBoardTasks = async (boardId) => {
-  tasks.forEach((task, idx) => {
-    if(task.boardId === boardId) {
-      tasks.splice(idx, 1)
-    }
-  })
+  tasks = tasks.filter((ele) => ele.boardId !== boardId)
 }
 
 const  updateTask = async (task, boardId, taskId) => {
@@ -39,6 +35,11 @@ const deleteTask = async (boardId, taskId) => {
   })
 }
 
-const getTaskById = async (boardId, taskId) => tasks.filter((task) => (task.boardId === boardId && task.id === taskId))
+const getTaskById = async (boardId, taskId) => tasks.filter((task) => {
+  if(task.boardId === boardId && task.id === taskId) {
+    return task
+  }
+  return false
+})
 
 module.exports = { getAllTasks, createTask, getTaskById, deleteUserTasks, deleteBoardTasks, updateTask, deleteTask }

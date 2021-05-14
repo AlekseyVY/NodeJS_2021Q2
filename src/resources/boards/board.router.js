@@ -15,7 +15,7 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:boardId').get(async (req, res) => {
   const boardById = await boardService.getBoardById(req.params.boardId)
-  if(boardById.length > 0) {
+  if(boardById[0] !== undefined) {
     res.status(200).json(boardById[0]);
   } else {
     res.sendStatus(404)
@@ -29,12 +29,8 @@ router.route('/:boardId').put(async (req, res) => {
 });
 
 router.route('/:boardId').delete(async (req, res) => {
-  const result = await boardService.deleteBoard(req.params.boardId)
-    if (result) {
-      res.sendStatus(204)
-    } else {
-      res.sendStatus(404)
-    }
+  await boardService.deleteBoard(req.params.boardId)
+  res.sendStatus(204)
 });
 
 
