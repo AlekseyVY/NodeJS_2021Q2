@@ -2,6 +2,7 @@ const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
 
+
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
   res.status(200).json(users.map(User.toResponse));
@@ -15,7 +16,7 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:userId').get(async (req, res) => {
   const userById = await usersService.getById(req.params.userId);
-  res.status(200).send(User.toResponse(userById[0]));
+  res.status(200).send(User.toResponse(userById));
 });
 
 router.route('/:userId').put(async (req, res) => {
