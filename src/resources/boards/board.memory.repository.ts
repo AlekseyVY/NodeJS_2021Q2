@@ -1,4 +1,6 @@
+export {}
 const { deleteBoardTasks } = require('../tasks/task.service');
+const { Board } = require("./board.model")
 /**
  * Module for all Boards Memory related functions
  * @module Board_Memory
@@ -8,14 +10,14 @@ const { deleteBoardTasks } = require('../tasks/task.service');
  * Array that contains all boards.
  * @typedef {Array} BoardData
  */
-let boards = [];
+let boards: Array<typeof Board> = [];
 
 /**
  * Returns all boards
  * @async
  * @returns {Promise<BoardData>} Returns Array of Boards
  */
-const getAllBoards = async () => boards;
+const getAllBoards = async (): Promise<typeof boards> => boards;
 
 /**
  * Creates board
@@ -23,7 +25,7 @@ const getAllBoards = async () => boards;
  * @param board {Board} Board
  * @returns {Promise<number>} No return value
  */
-const createBoard = async (board) => boards.push(board);
+const createBoard = async (board: typeof Board) => boards.push(board);
 
 /**
  * returns board with given Id
@@ -31,7 +33,7 @@ const createBoard = async (board) => boards.push(board);
  * @param boardId {number} Id of a board
  * @returns {Promise<Board>} Returns board
  */
-const getBoardById = async (boardId) => boards.find((ele) => ele.id === boardId);
+const getBoardById = async (boardId: String): Promise<typeof Board> => boards.find((ele) => ele.id === boardId);
 
 /**
  * Updates board
@@ -40,7 +42,7 @@ const getBoardById = async (boardId) => boards.find((ele) => ele.id === boardId)
  * @param updatedBoard {Board} Board
  * @returns {Promise<void>} No return value
  */
-const updateBoard = async (boardId, updatedBoard) => {
+const updateBoard = async (boardId: String, updatedBoard: typeof Board) => {
   boards.forEach((ele, idx) => {
     if(ele.id === boardId) {
       boards[idx] = updatedBoard;
@@ -53,7 +55,7 @@ const updateBoard = async (boardId, updatedBoard) => {
  * @param boardId {number} Id of a board
  * @returns {Promise<void>} No return value
  */
-const deleteBoard = async (boardId) => {
+const deleteBoard = async (boardId: String) => {
   boards = boards.filter((ele) => ele.id !== boardId);
   await deleteBoardTasks(boardId);
 }

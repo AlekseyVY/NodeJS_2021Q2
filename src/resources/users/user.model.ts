@@ -1,9 +1,24 @@
+export {}
 const uuid = require('uuid').v4;
 
+interface IUser {
+  id: String;
+  name: String;
+  login: String;
+  password: String;
+}
 /**
  * User class
  */
 class User {
+  public id: String;
+
+  public name: String;
+
+  public login: String;
+
+  public password: String;
+
   /**
    * @param id {string} Id of a User
    * @param name {string} Name of a user
@@ -15,7 +30,7 @@ class User {
     name = 'USER',
     login = 'user',
     password = 'P@55w0rd'
-  } = {}) {
+  }: IUser) {
     /**
      * @property id {string} Id of a User
      * @property name {string} Name of a user
@@ -34,7 +49,7 @@ class User {
    * @param user {Object} User object
    * @returns {{name, id, login}} Name, Id and login of a user
    */
-  static toResponse(user) {
+  static toResponse(user: User) {
     const { id, name, login } = user;
     return { id, name, login };
   }

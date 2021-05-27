@@ -1,5 +1,6 @@
+export {}
 const { deleteUserTasks } = require('../tasks/task.service');
-
+const { User } = require("./user.model")
 /**
  * Module for all User memory related functions.
  * @module User_Memory
@@ -9,14 +10,14 @@ const { deleteUserTasks } = require('../tasks/task.service');
  * Array that contains all users
  * @typedef {Array} UserData
  */
-let userBase = [];
+let userBase: Array<typeof User> = [];
 
 /**
  *This function returns Array of all users in database
  * @async
  * @returns {Promise<UserData>} Array of users
  */
-const getAll = async () => userBase;
+const getAll = async (): Promise<typeof userBase> => userBase;
 
 /**
  * Takes user and pushes it into array
@@ -24,7 +25,7 @@ const getAll = async () => userBase;
  * @param user {User} Instance of a User class
  * @returns {Promise<number>} No return value
  */
-const createUser = async (user) => userBase.push(user);
+const createUser = async (user: typeof User) => userBase.push(user);
 
 /**
  *This function finds and return User by it's Id
@@ -32,7 +33,7 @@ const createUser = async (user) => userBase.push(user);
  * @param userId {number} Id of a User
  * @returns {Promise<User>} User object
  */
-const getById = async (userId) => userBase.find((ele) => ele.id === userId);
+const getById = async (userId: String): Promise<typeof User> => userBase.find((ele) => ele.id === userId);
 
 /**
  *This function takes User object and updates it's correspondence in database
@@ -40,7 +41,7 @@ const getById = async (userId) => userBase.find((ele) => ele.id === userId);
  * @param user {User} instance of a User class
  * @returns {Promise<void>} No return value
  */
-const updateUser = async (userId, user) => {
+const updateUser = async (userId: String, user: typeof User) => {
    userBase.forEach((ele, idx) => {
     if(ele.id === userId){
       userBase[idx] = user;
@@ -53,7 +54,7 @@ const updateUser = async (userId, user) => {
  * @param userId {number} Id of a user
  * @returns {Promise<void>} No return value
  */
-const deleteUser = async (userId) => {
+const deleteUser = async (userId: String) => {
   userBase = userBase.filter((ele) => ele.id !== userId);
   await deleteUserTasks(userId);
 };

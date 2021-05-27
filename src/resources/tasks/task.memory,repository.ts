@@ -1,3 +1,4 @@
+const { Task } = require("./task.model");
 /**
  * Module for all Tasks Memory related functions
  * @module Task_Memory
@@ -7,7 +8,7 @@
  * TasksData of all tasks.
  * @typedef {Array} TasksData
  */
-let tasks = [];
+let tasks: Array<typeof Task> = [];
 
 /**
  * Returns all Tasks of given board
@@ -15,7 +16,7 @@ let tasks = [];
  * @param boardId {number} Id of Board
  * @returns {Promise<TasksData>} Returns all tasks in a array.
  */
-const getAllTasks = async (boardId) => tasks.filter((task) => task.boardId === boardId);
+const getAllTasks = async (boardId: String) => tasks.filter((task) => task.boardId === boardId);
 
 /**
  * Creates task
@@ -23,7 +24,7 @@ const getAllTasks = async (boardId) => tasks.filter((task) => task.boardId === b
  * @param task {Task} Task
  * @returns {Promise<number>} No return value
  */
-const createTask = async (task) => tasks.push(task);
+const createTask = async (task: typeof Task) => tasks.push(task);
 
 /**
  * Deletes tasks that assigned to {@link User}
@@ -31,7 +32,7 @@ const createTask = async (task) => tasks.push(task);
  * @param userId {number} Id of a User
  * @returns {Promise<void>} No return value
  */
-const deleteUserTasks = async (userId) => {
+const deleteUserTasks = async (userId: String) => {
   tasks.forEach((task, idx) => {
     if(task.userId === userId) {
       tasks[idx].userId = null;
@@ -45,7 +46,7 @@ const deleteUserTasks = async (userId) => {
  * @param boardId {number} Board Id
  * @returns {Promise<void>} No return value
  */
-const deleteBoardTasks = async (boardId) => {
+const deleteBoardTasks = async (boardId: String) => {
   tasks = tasks.filter((task) => task.boardId !== boardId);
 };
 
@@ -57,7 +58,7 @@ const deleteBoardTasks = async (boardId) => {
  * @param taskId {number} Id of a task
  * @returns {Promise<void>} No return value
  */
-const  updateTask = async (task, boardId, taskId) => {
+const  updateTask = async (task: typeof Task, boardId: String, taskId: String) => {
   tasks.forEach((ele, idx) => {
     if(ele.boardId === boardId && ele.id === taskId) {
       tasks[idx] = task;
@@ -72,7 +73,7 @@ const  updateTask = async (task, boardId, taskId) => {
  * @param taskId {number} Id of a task
  * @returns {Promise<void>} No return value
  */
-const deleteTask = async (boardId, taskId) => {
+const deleteTask = async (boardId: String, taskId: String) => {
   tasks.forEach((task, idx) => {
     if(task.id === taskId && task.boardId === boardId) {
       tasks.splice(idx, 1);
@@ -87,7 +88,7 @@ const deleteTask = async (boardId, taskId) => {
  * @param taskId {number} Id of a task
  * @returns {Promise<Task>} Returns Task
  */
-const getTaskById = async (boardId, taskId) => tasks.find((task) => {
+const getTaskById = async (boardId: String, taskId: String) => tasks.find((task) => {
   if(task.boardId === boardId && task.id === taskId) {
     return task;
   }

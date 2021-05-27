@@ -1,9 +1,33 @@
+export {}
 const uuid = require('uuid').v4;
 
+interface ITask {
+   id: String;
+   title: String;
+   order: Number;
+   userId: String;
+   boardId: String;
+   columnId: String;
+   description: String;
+}
 /**
  * Task class
  */
 class Task {
+  public id: String;
+
+  public title: String;
+
+  public order: Number;
+
+  public description: String;
+
+  public userId: String;
+
+  public boardId: String;
+
+  public columnId: String;
+
   /**
    *
    * @param id {string} Id of a task
@@ -22,7 +46,7 @@ class Task {
     userId = "string",
     boardId = "string",
     columnId = "string"
-  } = {}) {
+  }: ITask) {
     /**
      *
      * @property id {string} Id of a task
