@@ -1,4 +1,5 @@
-const { Task } = require("./task.model");
+import { ITask } from './task.model';
+
 /**
  * Module for all Tasks Memory related functions
  * @module Task_Memory
@@ -8,7 +9,7 @@ const { Task } = require("./task.model");
  * TasksData of all tasks.
  * @typedef {Array} TasksData
  */
-let tasks: Array<typeof Task> = [];
+let tasks: Array<ITask> = [];
 
 /**
  * Returns all Tasks of given board
@@ -16,7 +17,7 @@ let tasks: Array<typeof Task> = [];
  * @param boardId {number} Id of Board
  * @returns {Promise<TasksData>} Returns all tasks in a array.
  */
-const getAllTasks = async (boardId: String) => tasks.filter((task) => task.boardId === boardId);
+const getAllTasks = async (boardId: String): Promise<Array<ITask>> => tasks.filter((task) => task.boardId === boardId);
 
 /**
  * Creates task
@@ -24,7 +25,7 @@ const getAllTasks = async (boardId: String) => tasks.filter((task) => task.board
  * @param task {Task} Task
  * @returns {Promise<number>} No return value
  */
-const createTask = async (task: typeof Task) => tasks.push(task);
+const createTask = async (task: ITask) => tasks.push(task);
 
 /**
  * Deletes tasks that assigned to {@link User}
@@ -35,7 +36,7 @@ const createTask = async (task: typeof Task) => tasks.push(task);
 const deleteUserTasks = async (userId: String) => {
   tasks.forEach((task, idx) => {
     if(task.userId === userId) {
-      tasks[idx].userId = null;
+      tasks[idx]!.userId = null;
     }
   });
 };
@@ -58,7 +59,7 @@ const deleteBoardTasks = async (boardId: String) => {
  * @param taskId {number} Id of a task
  * @returns {Promise<void>} No return value
  */
-const  updateTask = async (task: typeof Task, boardId: String, taskId: String) => {
+const  updateTask = async (task: ITask, boardId: String, taskId: String) => {
   tasks.forEach((ele, idx) => {
     if(ele.boardId === boardId && ele.id === taskId) {
       tasks[idx] = task;

@@ -1,12 +1,12 @@
 export {}
 const uuid = require('uuid').v4;
 
-interface ITask {
+export interface ITask {
    id: String;
    title: String;
    order: Number;
-   userId: String;
-   boardId: String;
+   userId: String | null;
+   boardId: String | undefined;
    columnId: String;
    description: String;
 }
@@ -22,7 +22,7 @@ class Task {
 
   public description: String;
 
-  public userId: String;
+  public userId: String | null;
 
   public boardId: String;
 

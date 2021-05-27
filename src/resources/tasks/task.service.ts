@@ -1,6 +1,6 @@
-export {}
+import { ITask } from './task.model';
+
 const taskRepo = require('./task.memory,repository');
-const { Task } = require("./task.model")
 /**
  * Module for all Tasks Service related functions
  * @module Task_Service
@@ -11,14 +11,14 @@ const { Task } = require("./task.model")
  * @param boardId {number} Id of a board
  * @returns {Promise<TasksData>} Returns all tasks of a given board
  */
-const getAllTasks = (boardId: String): Array<typeof Task> => taskRepo.getAllTasks(boardId);
+const getAllTasks = (boardId: String): Array<ITask> => taskRepo.getAllTasks(boardId);
 
 /**
  * Function that calls createTask function and pass task
  * @param task {Task} Task
  * @returns {Promise<number>} No return value
  */
-const createTask = (task: typeof Task) => taskRepo.createTask(task);
+const createTask = (task: ITask) => taskRepo.createTask(task);
 
 /**
  * Function that calls getTaskById function and pass boardId and taskId
@@ -26,7 +26,7 @@ const createTask = (task: typeof Task) => taskRepo.createTask(task);
  * @param taskId {number} Id of a task
  * @returns {Promise<Task>} Returns Task
  */
-const getTaskById = (boardId: String, taskId: String): typeof Task => taskRepo.getTaskById(boardId, taskId);
+const getTaskById = (boardId: String, taskId: String): ITask => taskRepo.getTaskById(boardId, taskId);
 
 /**
  * Function that calls deleteUserTasks function and pass userId
@@ -49,7 +49,7 @@ const deleteBoardTasks = (boardId: String) => taskRepo.deleteBoardTasks(boardId)
  * @param taskId {number} id of a Task
  * @returns {Promise<void>} No return value
  */
-const updateTask = (task: typeof Task, boardId: String, taskId: String) => taskRepo.updateTask(task, boardId, taskId);
+const updateTask = (task: ITask, boardId: String, taskId: String) => taskRepo.updateTask(task, boardId, taskId);
 
 /**
  * Function that calls deleteTask function and pass boardId and taskId

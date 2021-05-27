@@ -1,7 +1,7 @@
 export {}
 const uuid = require('uuid').v4;
 
-interface IUser {
+export interface IUser {
   id: String;
   name: String;
   login: String;

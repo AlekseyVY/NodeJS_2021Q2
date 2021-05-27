@@ -1,30 +1,29 @@
-export {}
+import { IUser } from './user.model';
+
 const usersRepo = require('./user.memory.repository');
-const { User } = require("./user.model")
 /**
  * Module for all User service related functions.
  * @module User_Service
  */
-
 /**
  * Function that returns Array of all Users
  * @returns {Promise<UserData>}
  */
-const getAll = (): Array<typeof User> => usersRepo.getAll();
+const getAll = (): Array<IUser> => usersRepo.getAll();
 
 /**
  * Function that calls createUser function and pass User
  * @param user {User} User
  * @returns {Promise<number>} No return value
  */
-const addUser = (user: typeof User) => usersRepo.createUser(user);
+const addUser = (user: IUser) => usersRepo.createUser(user);
 
 /**
  * Function that calls getById function and pass UserId
  * @param userId {number} Id of a user
  * @returns {Promise<User>} Returns User
  */
-const getById = (userId: String): typeof User => usersRepo.getById(userId);
+const getById = (userId: String): IUser => usersRepo.getById(userId);
 
 /**
  * Function that calls updateUser function and pass UserId and User
@@ -32,7 +31,7 @@ const getById = (userId: String): typeof User => usersRepo.getById(userId);
  * @param user {User} User
  * @returns {Promise<void>} No return value
  */
-const updateUser = (userId: String, user: typeof User) => usersRepo.updateUser(userId, user);
+const updateUser = (userId: String, user: IUser) => usersRepo.updateUser(userId, user);
 
 /**
  * Function that calls deleteUser function and pass UserId

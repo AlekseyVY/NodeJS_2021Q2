@@ -1,23 +1,22 @@
-export {}
+import { IUser } from './user.model';
+
 const { deleteUserTasks } = require('../tasks/task.service');
-const { User } = require("./user.model")
 /**
  * Module for all User memory related functions.
  * @module User_Memory
  */
-
 /**
  * Array that contains all users
  * @typedef {Array} UserData
  */
-let userBase: Array<typeof User> = [];
+let userBase: Array<IUser> = [];
 
 /**
  *This function returns Array of all users in database
  * @async
  * @returns {Promise<UserData>} Array of users
  */
-const getAll = async (): Promise<typeof userBase> => userBase;
+const getAll = async (): Promise<Array<IUser>> => userBase;
 
 /**
  * Takes user and pushes it into array
@@ -25,7 +24,7 @@ const getAll = async (): Promise<typeof userBase> => userBase;
  * @param user {User} Instance of a User class
  * @returns {Promise<number>} No return value
  */
-const createUser = async (user: typeof User) => userBase.push(user);
+const createUser = async (user: IUser) => userBase.push(user);
 
 /**
  *This function finds and return User by it's Id
@@ -33,7 +32,7 @@ const createUser = async (user: typeof User) => userBase.push(user);
  * @param userId {number} Id of a User
  * @returns {Promise<User>} User object
  */
-const getById = async (userId: String): Promise<typeof User> => userBase.find((ele) => ele.id === userId);
+const getById = async (userId: String): Promise<IUser | undefined> => userBase.find((ele) => ele.id === userId);
 
 /**
  *This function takes User object and updates it's correspondence in database
@@ -41,7 +40,7 @@ const getById = async (userId: String): Promise<typeof User> => userBase.find((e
  * @param user {User} instance of a User class
  * @returns {Promise<void>} No return value
  */
-const updateUser = async (userId: String, user: typeof User) => {
+const updateUser = async (userId: String, user: IUser) => {
    userBase.forEach((ele, idx) => {
     if(ele.id === userId){
       userBase[idx] = user;

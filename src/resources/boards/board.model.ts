@@ -1,7 +1,7 @@
 export {}
 const uuid = require('uuid').v4;
 
-interface IBoard {
+export interface IBoard {
   id: String;
   title: String;
   columns: Array<Object>
