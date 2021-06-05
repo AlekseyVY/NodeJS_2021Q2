@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+import { loggingHelper } from './middleware/loggingHelper';
 
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
@@ -26,4 +27,14 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter)
+
+app.use((req: Request, _res: Response, next: NextFunction) => {
+  loggingHelper(req)
+  next()
+})
+
+
+
+
+
 module.exports = app;
