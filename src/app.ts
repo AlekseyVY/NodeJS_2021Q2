@@ -1,5 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
-import { loggingHelper } from './middleware/loggingHelper';
+import { requestLogger } from './middleware/requestLogger';
 
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
@@ -28,13 +28,13 @@ app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter)
 
-app.use((req: Request, _res: Response, next: NextFunction) => {
-  loggingHelper(req)
+app.use((req: Request, res: Response, next: NextFunction) => {
+  requestLogger(req, res)
   next()
 })
 
-
-
-
+// app.use((err: ErrorRequestHandler, req : Request, res: Response, next: NextFunction) => {
+//   next();
+// })
 
 module.exports = app;

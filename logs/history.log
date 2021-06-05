@@ -1,0 +1,71 @@
+{"URL":"/","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users","QUERY PARAMETERS":{},"BODY":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/6bb240fd-47c7-4476-839f-5a29f468c298","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/6bb240fd-47c7-4476-839f-5a29f468c298","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users","QUERY PARAMETERS":{},"BODY":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/d7713411-6488-42e5-a1f7-871841471d21","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users","QUERY PARAMETERS":{},"BODY":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/9c771512-1e7e-42c0-a313-acd847030a72","QUERY PARAMETERS":{},"BODY":{"name":"Autotest updated TEST_USER","login":"test_user","password":"T35t_P@55w0rd","id":"9c771512-1e7e-42c0-a313-acd847030a72"},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/9c771512-1e7e-42c0-a313-acd847030a72","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/9c771512-1e7e-42c0-a313-acd847030a72","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users","QUERY PARAMETERS":{},"BODY":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/133d30c8-9140-45a4-9c41-fad38adaf1e9","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/users","QUERY PARAMETERS":{},"BODY":{"name":"TEST_USER","login":"test_user","password":"T35t_P@55w0rd"},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0b70caa1-ec31-4db0-98e3-4761418d301c/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Task #1","order":1,"description":"Lorem ipsum","userId":"a003a606-a7b3-48ba-85c9-12abd3be604f","boardId":"0b70caa1-ec31-4db0-98e3-4761418d301c"},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0b70caa1-ec31-4db0-98e3-4761418d301c/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Task #2","order":2,"description":"Lorem ipsum","userId":"a003a606-a7b3-48ba-85c9-12abd3be604f","boardId":"0b70caa1-ec31-4db0-98e3-4761418d301c"},"STATUS CODE":200,"level":"info"}
+{"URL":"/users/a003a606-a7b3-48ba-85c9-12abd3be604f","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0b70caa1-ec31-4db0-98e3-4761418d301c/tasks/9e9d95e9-f1bd-440c-a83d-6d59c12f0b87","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0b70caa1-ec31-4db0-98e3-4761418d301c/tasks/277b94bf-eb58-49fb-bdfd-4d3eda523221","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0b70caa1-ec31-4db0-98e3-4761418d301c/tasks/9e9d95e9-f1bd-440c-a83d-6d59c12f0b87","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0b70caa1-ec31-4db0-98e3-4761418d301c/tasks/277b94bf-eb58-49fb-bdfd-4d3eda523221","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0b70caa1-ec31-4db0-98e3-4761418d301c","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3f22a8f4-1340-4b91-8404-2b88c5427b0c","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/0bde16b4-223f-404a-b6af-cb5567df6d0e","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/f0025ac8-8019-406b-9e2c-763090bebefc","QUERY PARAMETERS":{},"BODY":{"id":"f0025ac8-8019-406b-9e2c-763090bebefc","title":"Autotest updated board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/f0025ac8-8019-406b-9e2c-763090bebefc","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/f0025ac8-8019-406b-9e2c-763090bebefc","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/15145fde-79df-40b1-94df-2b232a9a5ac2","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/15145fde-79df-40b1-94df-2b232a9a5ac2","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Task #1","order":1,"description":"Lorem ipsum","boardId":"3ab930f6-5833-42dd-888b-fe7327c9ddda","userId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Task #2","order":2,"description":"Lorem ipsum","boardId":"3ab930f6-5833-42dd-888b-fe7327c9ddda","userId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Task #4","order":4,"description":"Lorem ipsum","boardId":"3ab930f6-5833-42dd-888b-fe7327c9ddda","userId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Task #5","order":5,"description":"Lorem ipsum","boardId":"3ab930f6-5833-42dd-888b-fe7327c9ddda","userId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Task #3","order":3,"description":"Lorem ipsum","boardId":"3ab930f6-5833-42dd-888b-fe7327c9ddda","userId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/c1c730cc-bc94-422c-8682-2cf4f5e8c328","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/3beda8f2-14dd-46ac-8905-d4d853df7909","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/18fb4635-433b-4d5f-a9b0-e7216b6d3a19","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/d0117641-a295-48e9-b493-91ebdb7b6c1b","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/70a076a8-f30b-450b-9b9c-eca3be15c4cd","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/c1c730cc-bc94-422c-8682-2cf4f5e8c328","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/3beda8f2-14dd-46ac-8905-d4d853df7909","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/18fb4635-433b-4d5f-a9b0-e7216b6d3a19","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/d0117641-a295-48e9-b493-91ebdb7b6c1b","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3ab930f6-5833-42dd-888b-fe7327c9ddda/tasks/70a076a8-f30b-450b-9b9c-eca3be15c4cd","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/3f22a8f4-1340-4b91-8404-2b88c5427b0c","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards","QUERY PARAMETERS":{},"BODY":{"title":"Autotest board","columns":[{"title":"Backlog","order":1},{"title":"Sprint","order":2}]},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks/b2730f62-5aaf-4888-956d-32dc1080be23","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks/333da4d8-bea0-437e-8f73-b423ad93ec8c","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks","QUERY PARAMETERS":{},"BODY":{"title":"Autotest task","order":0,"description":"Lorem ipsum","userId":null,"boardId":null,"columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks/6de22ba9-e284-4dd8-b370-a34f800e2070","QUERY PARAMETERS":{},"BODY":{"id":"6de22ba9-e284-4dd8-b370-a34f800e2070","title":"Autotest updated task","order":0,"description":"Lorem ipsum","userId":null,"boardId":"5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660","columnId":null},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks/6de22ba9-e284-4dd8-b370-a34f800e2070","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks/b2730f62-5aaf-4888-956d-32dc1080be23","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks/b2730f62-5aaf-4888-956d-32dc1080be23","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660/tasks/b2730f62-5aaf-4888-956d-32dc1080be23","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/boards/5dc3c0d0-0d5b-4ffe-8a02-98fcf760d660","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/sfgs","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/sfgs","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
+{"URL":"/sfgsyh78yyu","QUERY PARAMETERS":{},"BODY":{},"STATUS CODE":200,"level":"info"}
