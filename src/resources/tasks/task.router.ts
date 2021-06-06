@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { ITask } from './task.model';
-import { ExtendedError } from '../../middleware/CustomError';
-import { taskValidation } from '../../validators/taskValidation';
+import { ExtendedError, taskValidation } from '../../middleware/errorHandler';
 
 const router = require('express').Router({ mergeParams: true });
 const taskService = require('./task.service');
@@ -37,7 +36,7 @@ router.route('/:taskId').get(async (req: Request, res: Response, next: NextFunct
     const { boardId, taskId } = req.params;
     const taskById: ITask = await taskService.getTaskById(boardId, taskId);
     if(!taskById) {
-      throw new ExtendedError(404, "Task not found/.");
+      throw new ExtendedError(404, "Task not found.");
     }
     res.status(200).json(taskById);
   } catch(err) {

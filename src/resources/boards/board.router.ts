@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { IBoard } from './board.model';
-import { ExtendedError } from '../../middleware/CustomError';
-import { boardValidation } from '../../validators/boardValidation';
+import { boardValidation, ExtendedError } from '../../middleware/errorHandler';
 
 const router = require('express').Router();
 const boardService = require('./board.service');

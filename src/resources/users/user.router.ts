@@ -1,7 +1,6 @@
 import { NextFunction, Request, Response } from 'express';
 import { IUser } from './user.model';
-import { ExtendedError } from '../../middleware/CustomError';
-import { userValidation } from '../../validators/userValidation';
+import { ExtendedError, userValidation } from '../../middleware/errorHandler';
 
 export {}
 const router = require('express').Router();
