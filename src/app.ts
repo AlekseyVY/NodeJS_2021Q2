@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { requestLogger } from './middleware/requestLogger';
 import { errorHandler } from './middleware/errorHandler';
+import { ExtendedError } from './middleware/CustomError';
 
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
@@ -33,21 +34,21 @@ app.use('/', (req: Request, res: Response, next: NextFunction) => {
 app.use('/users', userRouter);
 app.use('/boards', boardRouter);
 app.use('/boards/:boardId/tasks', taskRouter);
+app.use('*', () => {
+  throw new ExtendedError(404, 'Page not found')
+})
 
-// app.use((err: ErrorRequestHandler, _req : Request, _res: Response, next: NextFunction) => {
-//   console.log('AAAAAAAAAAAAAAAA')
-//   errorHandler(err)
-//   next();
-// })
+app.use((err: Error | ExtendedError, _req : Request, _res: Response, next: NextFunction) => {
+  errorHandler({error: err});
+  next();
+})
 
 process.on('uncaughtException', (error: Error) => {
-  errorHandler(error);
+  errorHandler({error, exception: true});
 })
 
 process.on('unhandledRejection', (error: Error) => {
-  errorHandler(error);
+  errorHandler({error, exception: true});
 })
-
-Promise.reject(Error('Oops!'));
 
 module.exports = app;

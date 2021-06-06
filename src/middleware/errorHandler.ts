@@ -1,5 +1,18 @@
+import { Response } from 'express';
+import { exception } from './logger';
 import { errorLogger } from './errorLogger';
+import { ExtendedError } from './CustomError';
 
-export const errorHandler = (err: Error) => {
-  errorLogger(err)
+export interface IErrorObject {
+  error: Error | ExtendedError,
+  res?: Response,
+  req?: Request,
+  exception?: boolean
+}
+
+export const errorHandler = (error: IErrorObject) => {
+  if (error.exception) {
+    exception(error.error);
+  }
+  errorLogger(error);
 }

@@ -1,2 +1,3 @@
-{"ERROR":"Oops!","level":"error"}
-{"ERROR":"Oops!","level":"error"}
+{"ERROR":"User name not provided.","level":"error"}
+{"ERROR":"Login or Password are not provided.","level":"error"}
+{"ERROR":"User name not provided.","level":"error"}

@@ -1,8 +1,18 @@
+import { Response } from 'express';
 import { logger } from './logger';
+import { IErrorObject } from './errorHandler';
+import { ExtendedError } from './CustomError';
 
-export const errorLogger = (err: Error) => {
-  console.log(err);
-  logger.log('error', {
-    "ERROR": err.message
-  })
+export const errorLogger = (error: IErrorObject, res?: Response) => {
+  if(error.error instanceof ExtendedError) {
+    logger.log("error", {
+      "ERROR": error.error.msg
+    })
+    res?.sendStatus(error.error.statusCode);
+  } else {
+    logger.log("error", {
+      "ERROR": error.error.message
+    })
+    res?.status(500).send();
+  }
 }

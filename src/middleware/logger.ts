@@ -1,4 +1,5 @@
 import winston from 'winston';
+import fs from 'fs';
 
 export const logger = winston.createLogger({
   transports: [
@@ -15,3 +16,12 @@ export const logger = winston.createLogger({
     })
   ]
 });
+
+export const exception = (error: Error) => {
+  process.stdout.write("\n");
+  process.stdout.write(`\x1b[91m${`Error message: ${error.message}`}\x1b[39m`);
+  fs.writeFileSync('./logs/crash.log',
+    `System crashed: ${error.message}\n`, {flag: "a+"}
+  )
+  process.exit(1);
+}
