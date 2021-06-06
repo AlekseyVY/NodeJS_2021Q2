@@ -1,5 +1,4 @@
 import winston from 'winston';
-import fs from 'fs';
 import { Request, Response } from 'express';
 
 
@@ -48,12 +47,15 @@ export const errorLog = winston.createLogger({
 })
 
 export const exception = (error: Error) => {
-  process.stdout.write("\n");
-  process.stdout.write(`\x1b[91m${`Error message: ${error.message}`}\x1b[39m`);
-  fs.writeFileSync('./logs/crash.log',
-    `System crashed: ID: ${uuid()}, ERROR MESSAGE: ${error.message}, DATE: ${new Date()}\n`, {flag: "a+"}
-  )
-  process.exit(1);
+  errorLog.log('error', {
+    "Status": "SYSTEM CRASHED",
+    "ID": uuid(),
+    "ERROR MESSAGE": error.message,
+    "DATE": new Date()
+  })
+  setTimeout(() => {
+    process.exit(1);
+  }, 1000)
 }
 
 export const errorLogger = (error: IErrorObject, res?: Response) => {
