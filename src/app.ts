@@ -50,6 +50,5 @@ process.on('unhandledRejection', (error: Error) => {
   errorHandler({error, exception: true});
 })
 
-Promise.reject(Error('Oops!'));
 
 module.exports = app;
