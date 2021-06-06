@@ -47,7 +47,7 @@ process.on('uncaughtException', (error: Error) => {
 })
 
 process.on('unhandledRejection', (error: Error) => {
-  errorHandler({error, exception: true});
+  errorHandler({error});
 })
 
 module.exports = app;
