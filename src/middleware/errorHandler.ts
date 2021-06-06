@@ -13,6 +13,7 @@ export interface IErrorObject {
 export const errorHandler = (error: IErrorObject) => {
   if (error.exception) {
     exception(error.error);
+  } else {
+    errorLogger(error);
   }
-  errorLogger(error);
 }
