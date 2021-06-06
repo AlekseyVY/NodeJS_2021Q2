@@ -1,3 +1,7 @@
-{"ERROR":"User name not provided.","level":"error"}
-{"ERROR":"Login or Password are not provided.","level":"error"}
-{"ERROR":"User name not provided.","level":"error"}
+{"ERROR":"Board not found.","level":"error"}
+{"ERROR":"Task not found/.","level":"error"}
+{"ERROR":"Task not found/.","level":"error"}
+{"ERROR":"Task not found/.","level":"error"}
+{"ERROR":"Task not found/.","level":"error"}
+{"ERROR":"Task not found/.","level":"error"}
+{"ERROR":"Task not found/.","level":"error"}
