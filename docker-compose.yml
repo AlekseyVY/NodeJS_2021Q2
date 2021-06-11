@@ -1,9 +1,8 @@
 version: '3'
 services:
   app:
-    build: .
-    image: node_app
-    restart: on-failure
+    image: alekseyvy/docker_app:1.4
+    restart: always
     ports:
     - ${PORT}:${DOCKER_PORT}
     volumes:
@@ -12,7 +11,7 @@ services:
       - db
   db:
     image: "postgres:latest"
-    restart: on-failure
+    restart: always
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
     volumes:
