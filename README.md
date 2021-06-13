@@ -40,6 +40,12 @@ next install all dependencies with:
 ```
 npm install
 ```
+next create .env file with this variables:
+```
+PORT=4000
+DOCKER_PORT=8080
+POSTGRES_PASSWORD=secretpassword
+```
 next download image with:
 ```
 npm run docker:pull
