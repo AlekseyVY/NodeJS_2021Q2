@@ -42,7 +42,7 @@ npm install
 ```
 next download image with:
 ```
-npm run docker:run
+npm run docker:pull
 ```
 next launch app container with:
 ```
@@ -52,7 +52,7 @@ to scan for vulnerabilities:
 ```
 npm run docker:scan
 ```
-to test app with runing container:
+to test app with running container:
 ```
 npm run test
 ```

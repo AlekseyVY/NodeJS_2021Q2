@@ -15,7 +15,7 @@
     "lint": "eslint --ext .js,.ts --fix src/",
     "test": "cross-env DEBUG=rs:* jest --testMatch \"<rootDir>/test/e2e/test/*.test.js\" --noStackTrace --runInBand",
     "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
-    "docker:pull": "docker compose pull app",
+    "docker:pull": "docker compose pull",
     "docker:run": "docker compose up",
     "docker:scan": "docker scan alekseyvy/docker_app:1.4"
   },

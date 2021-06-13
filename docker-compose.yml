@@ -1,6 +1,7 @@
-version: '3'
+version: '3.8'
 services:
   app:
+    container_name: docker_app
     image: alekseyvy/docker_app:1.4
     restart: always
     ports:
@@ -10,7 +11,8 @@ services:
     depends_on:
       - db
   db:
-    image: "postgres:latest"
+    container_name: docker_db
+    image: alekseyvy/docker_db:1.0
     restart: always
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
