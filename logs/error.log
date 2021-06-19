@@ -35,3 +35,5 @@
 {"ID":"42e76217-cac4-4a26-bfe7-f6e9f33fe5a7","ERROR DATE":"2021-06-19T20:42:16.060Z","ERROR":"","BODY":{"statusCode":404,"msg":"Task not found."},"level":"error"}
 {"ID":"e7599bbd-58f6-4f25-82c5-d5951494a0c4","ERROR DATE":"2021-06-19T20:42:16.061Z","ERROR":"","BODY":{"statusCode":404,"msg":"Task not found."},"level":"error"}
 {"ID":"28c137dc-35c8-4c7e-b3cc-42b68ebbbebe","ERROR DATE":"2021-06-19T20:42:16.373Z","ERROR":"","BODY":{"statusCode":404,"msg":"Task not found."},"level":"error"}
+{"ID":"4dbc9664-f6f1-4aaf-b0d9-43a773019820","ERROR DATE":"2021-06-19T21:12:42.290Z","ERROR":"","BODY":{"statusCode":404,"msg":"Board not found."},"level":"error"}
+{"ID":"4139affc-f901-4a0d-afd7-2e58ef7d7c5c","ERROR DATE":"2021-06-19T21:12:42.706Z","ERROR":"","BODY":{"statusCode":404,"msg":"Task not found."},"level":"error"}
