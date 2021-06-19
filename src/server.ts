@@ -1,6 +1,12 @@
+import { createConnection } from 'typeorm';
+
 const { PORT } = require('./common/config');
 const server = require('./app');
 
-server.listen(PORT || 4000, () =>
-  process.stdout.write(`App is running on http://localhost:${PORT}`)
-);
+
+createConnection().then(async () => {
+  server.listen(PORT || 4000, () =>
+    process.stdout.write(`App is running on http://localhost:${PORT}`)
+  );
+}).catch(error => console.log(error));
+

@@ -1,22 +1,22 @@
-import { IUser } from './user.model';
+import { getRepository } from 'typeorm';
+import { User } from '../../entity/User';
 
-const { deleteUserTasks } = require('../tasks/task.service');
+
+// const { deleteUserTasks } = require('../tasks/task.service');
 /**
  * Module for all User memory related functions.
  * @module User_Memory
  */
-/**
- * Array that contains all users
- * @typedef {Array} UserData
- */
-let userBase: Array<IUser> = [];
 
 /**
  *This function returns Array of all users in database
  * @async
  * @returns {Promise<UserData>} Array of users
  */
-const getAll = async (): Promise<Array<IUser>> => userBase;
+export const getAll = async (): Promise<User[]> => {
+  const userRepository = getRepository(User)
+  return userRepository.find()
+};
 
 /**
  * Takes user and pushes it into array
@@ -24,7 +24,10 @@ const getAll = async (): Promise<Array<IUser>> => userBase;
  * @param user {User} Instance of a User class
  * @returns {Promise<number>} No return value
  */
-const createUser = async (user: IUser) => userBase.push(user);
+export const createUser = async (user: User) => {
+  const userRepository = getRepository(User)
+  await userRepository.save(user)
+};
 
 /**
  *This function finds and return User by it's Id
@@ -32,7 +35,12 @@ const createUser = async (user: IUser) => userBase.push(user);
  * @param userId {number} Id of a User
  * @returns {Promise<User>} User object
  */
-const getById = async (userId: String): Promise<IUser | undefined> => userBase.find((ele) => ele.id === userId);
+const getById = async (userId: string): Promise<User | undefined> => {
+  const userRepository = getRepository(User)
+  const data = userRepository.findOne(userId)
+  if (!data) return undefined
+  return data;
+}
 
 /**
  *This function takes User object and updates it's correspondence in database
@@ -40,12 +48,9 @@ const getById = async (userId: String): Promise<IUser | undefined> => userBase.f
  * @param user {User} instance of a User class
  * @returns {Promise<void>} No return value
  */
-const updateUser = async (userId: String, user: IUser) => {
-   userBase.forEach((ele, idx) => {
-    if(ele.id === userId){
-      userBase[idx] = user;
-    }
-  });
+const updateUser = async (userId: string, user: User) => {
+  const userRepository = getRepository(User);
+  await userRepository.update(userId, user)
 };
 
 /**
@@ -53,9 +58,10 @@ const updateUser = async (userId: String, user: IUser) => {
  * @param userId {number} Id of a user
  * @returns {Promise<void>} No return value
  */
-const deleteUser = async (userId: String) => {
-  userBase = userBase.filter((ele) => ele.id !== userId);
-  await deleteUserTasks(userId);
+const deleteUser = async (userId: string) => {
+  const userRepository = getRepository(User);
+  await userRepository.delete(userId)
+  // await deleteUserTasks(userId);
 };
 
 module.exports = { getAll, createUser, getById, updateUser, deleteUser };
