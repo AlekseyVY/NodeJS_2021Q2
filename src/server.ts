@@ -8,5 +8,5 @@ createConnection().then(async () => {
   server.listen(PORT || 4000, () =>
     process.stdout.write(`App is running on http://localhost:${PORT}`)
   );
-}).catch(error => console.log(error));
+}).catch(error => process.stdout.write(error));
 

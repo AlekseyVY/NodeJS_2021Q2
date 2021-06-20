@@ -1,7 +1,7 @@
 import { getRepository } from 'typeorm';
 import { Board } from '../../entity/Board';
 
-// const { deleteBoardTasks } = require('../tasks/task.service');
+const { deleteBoardTasks } = require('../tasks/task.service');
 /**
  * Module for all Boards Memory related functions
  * @module Board_Memory
@@ -50,7 +50,7 @@ const getBoardById = async (boardId: string): Promise<Board | undefined> => {
  */
 const updateBoard = async (boardId: string, updatedBoard: Board) => {
   const boardRepository = getRepository(Board);
-  await boardRepository.update(boardId, updatedBoard)
+  await boardRepository.update({id: boardId}, {...updatedBoard});
 };
 
 /**
@@ -61,7 +61,7 @@ const updateBoard = async (boardId: string, updatedBoard: Board) => {
 const deleteBoard = async (boardId: string) => {
   const boardRepository = getRepository(Board);
   await boardRepository.delete(boardId)
-  // await deleteBoardTasks(boardId);
+  await deleteBoardTasks(boardId);
 }
 
 

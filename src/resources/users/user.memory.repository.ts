@@ -2,7 +2,7 @@ import { getRepository } from 'typeorm';
 import { User } from '../../entity/User';
 
 
-// const { deleteUserTasks } = require('../tasks/task.service');
+const { deleteUserTasks } = require('../tasks/task.service');
 /**
  * Module for all User memory related functions.
  * @module User_Memory
@@ -61,7 +61,7 @@ const updateUser = async (userId: string, user: User) => {
 const deleteUser = async (userId: string) => {
   const userRepository = getRepository(User);
   await userRepository.delete(userId)
-  // await deleteUserTasks(userId);
+  await deleteUserTasks(userId);
 };
 
 module.exports = { getAll, createUser, getById, updateUser, deleteUser };

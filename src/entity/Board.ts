@@ -4,12 +4,12 @@ import {Entity, PrimaryGeneratedColumn, Column} from "typeorm";
 export class Board {
 
   @PrimaryGeneratedColumn('uuid')
-  id: number | undefined;
+  id: string | undefined;
 
   @Column({type: 'varchar'})
   title: string | undefined;
 
-  @Column('simple-array')
-  columns: object[] | undefined
+  @Column({ type: 'json', array: false })
+  columns: Array<{ title: string; order: number; }> | undefined;
 
 }
