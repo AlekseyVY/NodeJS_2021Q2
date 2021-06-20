@@ -17,7 +17,10 @@
       "test:auth": "cross-env DEBUG=rs:* TEST_MODE=auth jest --noStackTrace",
       "docker:pull": "docker compose pull",
       "docker:run": "docker compose up",
-      "docker:scan": "docker scan alekseyvy/docker_db:1.0"
+      "docker:scan": "docker scan alekseyvy/docker_db:1.0",
+      "typeorm:win": "ts-node -r tsconfig-paths/register node_modules\\typeorm\\cli.js",
+      "migration:generate": "npm run typeorm:win migration:generate -- -n test_migration",
+      "migration:run": "npm run typeorm:win migration:run"
    },
    "keywords": [
       "rs",

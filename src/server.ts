@@ -1,5 +1,6 @@
 import { createConnection } from 'typeorm';
 
+
 const { PORT } = require('./common/config');
 const server = require('./app');
 

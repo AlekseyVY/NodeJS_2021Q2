@@ -5,6 +5,7 @@
       "allowJs": false,
       "outDir": "./build",
       "rootDir": "./src",
+      "baseUrl": "src",
       "downlevelIteration": false,
       "strict": true,
       "noUnusedLocals": true,
