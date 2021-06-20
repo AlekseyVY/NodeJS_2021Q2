@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  app:
+    container_name: docker_app
+    image: alekseyvy/docker_app:1.4
+    restart: always
+    ports:
+    - ${PORT}:${DOCKER_PORT}
+    volumes:
+      - logs:/src/logs
+    depends_on:
+      - db
+  db:
+    container_name: docker_db
+    image: alekseyvy/docker_db:1.0
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - db-data:/src/db_data
+
+networks:
+  node_net:
+    driver: bridge
+
+volumes:
+  logs:
+  db-data:
