@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import { errorHandler, ExtendedError } from './middleware/errorHandler';
 import { requestLogger } from './middleware/logger';
+import "reflect-metadata";
 
 const express = require('express');
 const swaggerUI = require('swagger-ui-express');
@@ -46,6 +47,7 @@ process.on('uncaughtException', (error: Error) => {
   errorHandler({error, exception: true});
 })
 
+// @ts-ignore
 process.on('unhandledRejection', (error: Error) => {
   errorHandler({error});
 })

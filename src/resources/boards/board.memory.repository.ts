@@ -1,4 +1,5 @@
-import { IBoard } from './board.model';
+import { getRepository } from 'typeorm';
+import { Board } from '../../entity/Board';
 
 const { deleteBoardTasks } = require('../tasks/task.service');
 /**
@@ -7,17 +8,14 @@ const { deleteBoardTasks } = require('../tasks/task.service');
  */
 
 /**
- * Array that contains all boards.
- * @typedef {Array} BoardData
- */
-let boards: Array<IBoard> = [];
-
-/**
  * Returns all boards
  * @async
  * @returns {Promise<BoardData>} Returns Array of Boards
  */
-const getAllBoards = async (): Promise<Array<IBoard>> => boards;
+const getAllBoards = async (): Promise<Board[]> => {
+  const boardRepository = getRepository(Board)
+  return boardRepository.find()
+};
 
 /**
  * Creates board
@@ -25,7 +23,10 @@ const getAllBoards = async (): Promise<Array<IBoard>> => boards;
  * @param board {Board} Board
  * @returns {Promise<number>} No return value
  */
-const createBoard = async (board: IBoard) => boards.push(board);
+const createBoard = async (board: Board) => {
+  const boardRepository = getRepository(Board)
+  await boardRepository.save(board)
+};
 
 /**
  * returns board with given Id
@@ -33,7 +34,12 @@ const createBoard = async (board: IBoard) => boards.push(board);
  * @param boardId {number} Id of a board
  * @returns {Promise<Board>} Returns board
  */
-const getBoardById = async (boardId: String): Promise<IBoard | undefined> => boards.find((ele) => ele.id === boardId);
+const getBoardById = async (boardId: string): Promise<Board | undefined> => {
+  const boardRepository = getRepository(Board)
+  const data = boardRepository.findOne(boardId)
+  if (!data) return undefined
+  return data;
+};
 
 /**
  * Updates board
@@ -42,12 +48,9 @@ const getBoardById = async (boardId: String): Promise<IBoard | undefined> => boa
  * @param updatedBoard {Board} Board
  * @returns {Promise<void>} No return value
  */
-const updateBoard = async (boardId: String, updatedBoard: IBoard) => {
-  boards.forEach((ele, idx) => {
-    if(ele.id === boardId) {
-      boards[idx] = updatedBoard;
-    }
-  });
+const updateBoard = async (boardId: string, updatedBoard: Board) => {
+  const boardRepository = getRepository(Board);
+  await boardRepository.update({id: boardId}, {...updatedBoard});
 };
 
 /**
@@ -55,8 +58,9 @@ const updateBoard = async (boardId: String, updatedBoard: IBoard) => {
  * @param boardId {number} Id of a board
  * @returns {Promise<void>} No return value
  */
-const deleteBoard = async (boardId: String) => {
-  boards = boards.filter((ele) => ele.id !== boardId);
+const deleteBoard = async (boardId: string) => {
+  const boardRepository = getRepository(Board);
+  await boardRepository.delete(boardId)
   await deleteBoardTasks(boardId);
 }
 
